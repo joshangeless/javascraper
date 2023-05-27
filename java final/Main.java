@@ -8,7 +8,7 @@ public class Main {
 
         boolean flag = true;
         do {
-            System.out.println("Would you like to scrape information form H&M? \n[1] Yes \n[2] No");
+            System.out.println("Would you like to scrape information from H&M? \n[1] Yes \n[2] No");
             int user = scan.nextInt();
 
             switch (user) {
@@ -41,35 +41,30 @@ public class Main {
     }
 
     public static void selectItem() throws IOException {
-        scrape s1 = new scrape();
+        productlist p1 = new productlist();
         Scanner scan = new Scanner(System.in);
         Scanner scan2 = new Scanner(System.in);
-        boolean flag = true;
 
         System.out.println("What would you like to look at?\n Input item number(1-36): ");
         int user = scan.nextInt();
-        if(user == 0 ) {
+        if (user == 0) {
             System.out.println("Please select item number between 1-36");
             selectItem();
         } else {
-            System.out.println(s1.productLinks().get(user));
+            System.out.println(p1.productLinks().get(user));
         }
 
         System.out.println("Would you like to get another item? \n[1]Yes \n[2]No");
         int user2 = scan.nextInt();
 
-        do {
-            switch (user2) {
-                case 1:
-                    selectItem();
-                    break;
+        switch (user2) {
+            case 1:
+                selectItem();
+                break;
 
-                case 2:
-                    System.out.println("Bye!");
-                    flag = false;
-                    break;
-            }
-
-        } while (flag);
+            case 2:
+                System.out.println("Bye!");
+                break;
+        }
     }
 }
