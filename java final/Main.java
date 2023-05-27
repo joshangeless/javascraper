@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
+        // Importing the methods.
         Scanner scan = new Scanner(System.in);
         scrape s1 = new scrape();
 
@@ -13,7 +14,7 @@ public class Main {
 
             switch (user) {
                 case 1:
-                    s1.productInfo();
+                    s1.productInfo(); // Calling the product info method to display the data.
                     flag = false;
                     break;
                 case 2:
@@ -23,13 +24,14 @@ public class Main {
 
         } while (flag);
 
+        // Loop if you would like to see a certain item.
         do {
             System.out.println("\nWould you like to look at an item? \n[1] Yes \n[2] No");
             int user = scan.nextInt();
 
             switch (user) {
                 case 1:
-                    selectItem();
+                    selectItem(); // Calling method below
                     flag = false;
                 case 2:
                     System.out.println("Have a nice day!");
@@ -41,6 +43,7 @@ public class Main {
     }
 
     public static void selectItem() throws IOException {
+        // importing product lists.
         productlist p1 = new productlist();
         Scanner scan = new Scanner(System.in);
         Scanner scan2 = new Scanner(System.in);
@@ -51,7 +54,7 @@ public class Main {
             System.out.println("Please select item number between 1-36");
             selectItem();
         } else {
-            System.out.println(p1.productLinks().get(user));
+            System.out.println(p1.productLinks().get(user)); // Gets the products in the array.
         }
 
         System.out.println("Would you like to get another item? \n[1]Yes \n[2]No");
